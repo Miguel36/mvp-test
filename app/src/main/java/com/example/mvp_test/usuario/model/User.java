@@ -3,6 +3,8 @@ package com.example.mvp_test.usuario.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
+
 public class User {
 
     @SerializedName("name")
@@ -11,6 +13,9 @@ public class User {
     @SerializedName("last_name")
     @Expose
     private String lastName;
+    @SerializedName("url")
+    @Expose
+    private String url;
 
     public String getName() {
         return name;
@@ -26,5 +31,13 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getURL() {
+        return url;
+    }
+
+    public void setURL(String url) {
+        this.url = url;
     }
 }

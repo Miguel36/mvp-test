@@ -1,9 +1,12 @@
 package com.example.mvp_test.usuario.view;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,6 +19,10 @@ import com.example.mvp_test.R;
 import com.example.mvp_test.usuario.model.User;
 import com.example.mvp_test.usuario.UserContract;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
 
 public class UserInfoFragment extends Fragment implements UserContract.UserViewContract {
 
@@ -24,6 +31,7 @@ public class UserInfoFragment extends Fragment implements UserContract.UserViewC
     private ViewGroup content;
     private TextView nameTextView, lastNameTextView;
     private UserContract.UserPresenterContract presenter;
+    private ImageView photoImage;
 
 
     @Override
@@ -40,6 +48,7 @@ public class UserInfoFragment extends Fragment implements UserContract.UserViewC
         content = view.findViewById(R.id.content_info);
         nameTextView = view.findViewById(R.id.name);
         lastNameTextView = view.findViewById(R.id.lastname);
+        photoImage = view.findViewById(R.id.photo);
 
 
         //presenter.loadUser();
@@ -75,5 +84,24 @@ public class UserInfoFragment extends Fragment implements UserContract.UserViewC
         if (isAdded()) {
             Toast.makeText(getContext(), message, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    @Override
+    public void displayImage(String url) {
+        if (isAdded()) {
+            URL address;
+            try {
+                address = new URL(url);
+                Bitmap bmp = BitmapFactory.decodeStream(address.openConnection().getInputStream());
+                photoImage.setImageBitmap(bmp);
+
+            } catch (MalformedURLException e) {
+                displayMessage(e.getMessage());
+            } catch (IOException e) {
+                displayMessage(e.getMessage());
+            }
+
+        }
+
     }
 }

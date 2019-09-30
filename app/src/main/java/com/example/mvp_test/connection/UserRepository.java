@@ -1,4 +1,4 @@
-package com.example.mvp_test.usuario;
+package com.example.mvp_test.connection;
 
 import com.example.mvp_test.connection.WebServices;
 import com.example.mvp_test.usuario.model.User;

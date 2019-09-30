@@ -13,6 +13,7 @@ public interface UserContract {
         void load(boolean loading);
         void showUserInformation(User user);
         void displayMessage(String message);
+        void displayImage(String url);
     }
 
 }
