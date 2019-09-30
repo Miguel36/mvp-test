@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.bumptech.glide.Glide;
 import com.example.mvp_test.R;
 import com.example.mvp_test.usuario.model.User;
 import com.example.mvp_test.usuario.UserContract;
@@ -88,18 +89,11 @@ public class UserInfoFragment extends Fragment implements UserContract.UserViewC
 
     @Override
     public void displayImage(String url) {
-        if (isAdded()) {
-            URL address;
-            try {
-                address = new URL(url);
-                Bitmap bmp = BitmapFactory.decodeStream(address.openConnection().getInputStream());
-                photoImage.setImageBitmap(bmp);
-
-            } catch (MalformedURLException e) {
-                displayMessage(e.getMessage());
-            } catch (IOException e) {
-                displayMessage(e.getMessage());
-            }
+        if (isAdded() && getContext() != null) {
+                Glide.with(getContext())
+                        .load(url)
+                        .centerCrop()
+                        .into(photoImage);
 
         }
 
