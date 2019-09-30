@@ -1,7 +1,7 @@
 package com.example.mvp_test.usuario.presenter;
 
 import com.example.mvp_test.usuario.UserContract;
-import com.example.mvp_test.usuario.UserRepository;
+import com.example.mvp_test.connection.UserRepository;
 import com.example.mvp_test.usuario.model.User;
 
 import retrofit2.Call;
@@ -25,7 +25,9 @@ public class UserPresenter implements UserContract.UserPresenterContract {
         userRepository.getUserInfo(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
-                view.showUserInformation(response.body());
+                User mUser = response.body();
+                view.showUserInformation(mUser);
+                view.displayImage(mUser.getURL());
                 view.load(false);
 
             }
@@ -36,8 +38,5 @@ public class UserPresenter implements UserContract.UserPresenterContract {
                 view.load(false);
             }
         });
-
-
-
     }
 }

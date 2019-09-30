@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 
 public interface WebServices {
 
-    @GET("5d925906310000e1ac10cf04/")
+    @GET("5d926755310000d48110cf36/")
     Call<User> getUser();
 
 }
