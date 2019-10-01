@@ -14,13 +14,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         UserInfoFragment userInfoFragment = (UserInfoFragment) getSupportFragmentManager().findFragmentById(R.id.user_fragment);
         UserPresenter mUserPresenter = new UserPresenter(userInfoFragment);
 
         if (userInfoFragment != null) {
-            mUserPresenter.loadUser();
             userInfoFragment.setPresenter(mUserPresenter);
+            mUserPresenter.loadUser();
         }
 
     }

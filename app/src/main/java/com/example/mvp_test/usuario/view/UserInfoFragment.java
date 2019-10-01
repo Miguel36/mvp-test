@@ -38,7 +38,6 @@ public class UserInfoFragment extends Fragment implements UserContract.UserViewC
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
         progressbar = view.findViewById(R.id.progress);
         content = view.findViewById(R.id.content_info);
         nameTextView = view.findViewById(R.id.name);

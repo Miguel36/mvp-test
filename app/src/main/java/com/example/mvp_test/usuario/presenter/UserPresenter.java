@@ -20,7 +20,6 @@ public class UserPresenter implements UserContract.UserPresenterContract {
 
     @Override
     public void loadUser() {
-
         view.load(true);
         userRepository.getUserInfo(new Callback<User>() {
             @Override
