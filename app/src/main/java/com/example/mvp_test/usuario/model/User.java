@@ -3,7 +3,6 @@ package com.example.mvp_test.usuario.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import static android.provider.ContactsContract.CommonDataKinds.Website.URL;
 
 public class User {
 

@@ -1,6 +1,6 @@
 package com.example.mvp_test.usuario.presenter;
 
-import com.example.mvp_test.usuario.UserContract;
+import com.example.mvp_test.usuario.interfaces.UserContract;
 import com.example.mvp_test.connection.UserRepository;
 import com.example.mvp_test.usuario.model.User;
 
@@ -14,7 +14,7 @@ public class UserPresenter implements UserContract.UserPresenterContract {
     private UserContract.UserViewContract view;
 
     public UserPresenter(UserContract.UserViewContract view) {
-        userRepository = new UserRepository();
+        userRepository = UserRepository.getInstance();
         this.view = view;
     }
 

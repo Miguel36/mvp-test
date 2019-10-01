@@ -1,7 +1,5 @@
 package com.example.mvp_test.usuario.view;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.bumptech.glide.Glide;
 import com.example.mvp_test.R;
 import com.example.mvp_test.usuario.model.User;
-import com.example.mvp_test.usuario.UserContract;
-
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
+import com.example.mvp_test.usuario.interfaces.UserContract;
 
 
 public class UserInfoFragment extends Fragment implements UserContract.UserViewContract {

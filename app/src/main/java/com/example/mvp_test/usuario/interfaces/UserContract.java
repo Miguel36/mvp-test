@@ -1,4 +1,4 @@
-package com.example.mvp_test.usuario;
+package com.example.mvp_test.usuario.interfaces;
 
 import com.example.mvp_test.usuario.model.User;
 
