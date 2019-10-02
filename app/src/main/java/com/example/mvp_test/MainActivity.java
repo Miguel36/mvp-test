@@ -1,9 +1,7 @@
 package com.example.mvp_test;
 
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.mvp_test.usuario.presenter.UserPresenter;
 import com.example.mvp_test.usuario.view.UserInfoFragment;
 
@@ -21,6 +19,5 @@ public class MainActivity extends AppCompatActivity {
             userInfoFragment.setPresenter(mUserPresenter);
             mUserPresenter.loadUser();
         }
-
     }
 }

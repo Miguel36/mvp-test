@@ -3,7 +3,6 @@ package com.example.mvp_test.usuario.presenter;
 import com.example.mvp_test.usuario.interfaces.UserContract;
 import com.example.mvp_test.connection.UserRepository;
 import com.example.mvp_test.usuario.model.User;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

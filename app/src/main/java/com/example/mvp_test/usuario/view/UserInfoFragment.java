@@ -8,11 +8,9 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-
 import com.bumptech.glide.Glide;
 import com.example.mvp_test.R;
 import com.example.mvp_test.usuario.model.User;
@@ -20,7 +18,6 @@ import com.example.mvp_test.usuario.interfaces.UserContract;
 
 
 public class UserInfoFragment extends Fragment implements UserContract.UserViewContract {
-
 
     private ProgressBar progressbar;
     private ViewGroup content;
